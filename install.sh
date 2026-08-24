@@ -134,13 +134,8 @@ PACKAGES=(
     xclip
 
     # Applications
-    firefox
     nautilus
-    thunar
-    mpv
-    vlc
-    vlc-cli
-    visual-studio-code-bin
+    firefox
     geany
     ncmpcpp
 
