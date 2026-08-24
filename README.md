@@ -63,7 +63,7 @@ L'ordre de chargement compte : `matugen-colors.lua` est chargé **après** `hypr
 ### installation complète 
 
 ```bash
-git clone <url-du-repo> ~/liquid_hyprglass
+git clone https://github.com/adomtb/LiquidHyprGlass.git ~/liquid_hyprglass
 cd ~/liquid_hyprglass
 ./install.sh
 ```
