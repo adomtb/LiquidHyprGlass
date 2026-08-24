@@ -73,9 +73,8 @@ cd ~/liquid_hyprglass
 1. Active les dépôts pacman nécessaires (`chaotic-aur`, et le dépôt perso `gh0stzk-dotfiles` pour `colorscript`/l'ascii-art du zsh)
 2. Installe `yay`, puis tous les paquets de la stack (Hyprland, wayle, hypr-dock, HyprMod, kitty, zsh + plugins, rofi, waybar, matugen, waypaper, hyprpaper, fastfetch, hyprshot, satty, wf-recorder, playerctl, brightnessctl, pipewire/wireplumber, Firefox, Nautilus, Thunar, mpv, VLC, VS Code, geany, ncmpcpp, polices...)
 3. Installe le plugin **hyprglass** via `hyprpm` (repo [hyprnux/hyprglass](https://github.com/hyprnux/hyprglass))
-4. Installe **Zen Browser** en Flatpak
-5. Symlink chaque dossier de ce repo vers `~/.config/<outil>/` (et `zsh/.zshrc` → `~/.zshrc`) — toute config déjà présente est sauvegardée en `.bak.<date>` plutôt qu'écrasée
-6. Passe le shell par défaut à `zsh` et active `NetworkManager` / `bluetooth`
+4. Symlink chaque dossier de ce repo vers `~/.config/<outil>/` (et `zsh/.zshrc` → `~/.zshrc`) — toute config déjà présente est sauvegardée en `.bak.<date>` plutôt qu'écrasée
+5. Passe le shell par défaut à `zsh` et active `NetworkManager` / `bluetooth`
 
 > ⚠️ La localisation du module météo (`wayle/config.toml`) est un placeholder (`Paris`) — à adapter à ta ville après installation.
 

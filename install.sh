@@ -178,16 +178,7 @@ fi
 hyprpm enable hyprglass
 
 # ---------------------------------------------------------------------------
-# 5. Zen Browser (flatpak)
-# ---------------------------------------------------------------------------
-log "Installation de Zen Browser (flatpak)"
-
-sudo pacman -S --needed --noconfirm flatpak
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install -y --noninteractive flathub app.zen_browser.zen
-
-# ---------------------------------------------------------------------------
-# 6. Déploiement de la config (symlinks vers ce repo)
+# 5. Déploiement de la config (symlinks vers ce repo)
 # ---------------------------------------------------------------------------
 log "Déploiement de la config dans ~/.config"
 
@@ -218,7 +209,7 @@ ln -sfn "$REPO_DIR/zsh/asciiart" "$HOME/.local/share/asciiart"
 mkdir -p "$HOME/.config/zsh"
 
 # ---------------------------------------------------------------------------
-# 7. Shell par défaut et services
+# 6. Shell par défaut et services
 # ---------------------------------------------------------------------------
 log "zsh comme shell par défaut"
 sudo chsh -s /usr/bin/zsh "$USER"
@@ -233,7 +224,5 @@ Prochaines étapes manuelles :
   - Se déconnecter / redémarrer, puis choisir la session "Hyprland" au login.
   - Adapter la ville météo dans wayle/config.toml (placeholder: "Paris").
   - Lancer `waypaper` pour choisir un fond d'écran (matugen régénère les couleurs).
-  - Zen Browser est installé en Flatpak (app.zen_browser.zen) et non aliasé
-    à `zen-browser` dans le PATH — l'ajouter si besoin.
 
 EOF
