@@ -60,7 +60,30 @@ L'ordre de chargement compte : `matugen-colors.lua` est chargé **après** `hypr
 
 ## 📦 Installation
 
-Ce repo est organisé façon [GNU Stow](https://www.gnu.org/software/stow/) : un dossier par outil, dont le contenu correspond à ce qui va dans `~/.config/<outil>/` (sauf `zsh/.zshrc`, à placer dans `~/.zshrc`).
+### Réinstallation complète (Arch Linux)
+
+```bash
+git clone <url-du-repo> ~/liquid_hyprglass
+cd ~/liquid_hyprglass
+./install.sh
+```
+
+`install.sh` fait tout, de façon idempotente (on peut le relancer sans risque) :
+
+1. Active les dépôts pacman nécessaires (`chaotic-aur`, et le dépôt perso `gh0stzk-dotfiles` pour `colorscript`/l'ascii-art du zsh)
+2. Installe `yay`, puis tous les paquets de la stack (Hyprland, wayle, hypr-dock, HyprMod, kitty, zsh + plugins, rofi, waybar, matugen, waypaper, hyprpaper, fastfetch, hyprshot, satty, wf-recorder, playerctl, brightnessctl, pipewire/wireplumber, Firefox, Nautilus, Thunar, mpv, VLC, VS Code, geany, ncmpcpp, polices...)
+3. Installe le plugin **hyprglass** via `hyprpm` (repo [hyprnux/hyprglass](https://github.com/hyprnux/hyprglass))
+4. Installe **Zen Browser** en Flatpak
+5. Symlink chaque dossier de ce repo vers `~/.config/<outil>/` (et `zsh/.zshrc` → `~/.zshrc`) — toute config déjà présente est sauvegardée en `.bak.<date>` plutôt qu'écrasée
+6. Passe le shell par défaut à `zsh` et active `NetworkManager` / `bluetooth`
+
+> ⚠️ La localisation du module météo (`wayle/config.toml`) est un placeholder (`Paris`) — à adapter à ta ville après installation.
+
+Le script suppose une base Arch fonctionnelle (réseau + `sudo` déjà en place, typiquement juste après `archinstall`), et ne gère pas le partitionnement ni les pilotes GPU.
+
+### Structure du repo
+
+Un dossier par outil, dont le contenu correspond à ce qui va dans `~/.config/<outil>/` (sauf `zsh/`, qui contient `.zshrc`, `colorscript` et `asciiart/`, destinés à `~/.zshrc`, `~/.local/bin/` et `~/.local/share/`) :
 
 ```
 hypr/          → ~/.config/hypr/
@@ -74,10 +97,6 @@ waypaper/      → ~/.config/waypaper/
 fastfetch/     → ~/.config/fastfetch/
 zsh/.zshrc     → ~/.zshrc
 ```
-
-Avec `stow` installé, un simple `stow hypr kitty rofi waybar wayle waypaper fastfetch matugen hypr-dock` depuis la racine du repo crée les symlinks nécessaires (adapter pour `zsh/.zshrc`, qui vit hors de `~/.config`).
-
-> ⚠️ La localisation du module météo (`wayle/config.toml`) est un placeholder (`Paris`) — à adapter à ta ville après installation.
 
 ---
 
