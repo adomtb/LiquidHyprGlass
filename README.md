@@ -60,7 +60,7 @@ L'ordre de chargement compte : `matugen-colors.lua` est chargé **après** `hypr
 
 ## 📦 Installation
 
-### Réinstallation complète (Arch Linux)
+### installation complète 
 
 ```bash
 git clone <url-du-repo> ~/liquid_hyprglass
