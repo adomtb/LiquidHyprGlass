@@ -1,0 +1,65 @@
+# Wayle configuration file
+imports = ["./matugen/colors.toml"]
+
+[bar]
+scale = 0.8500000238418579
+inset-edge = 0.5
+inset-ends = 21.5
+padding = 0.5
+padding-ends = 1.0
+module-gap = 1.0
+bg = "bg-base"
+background-opacity = 44
+rounding = "full"
+button-bg-opacity = 32
+button-label-weight = "bold"
+button-rounding = "lg"
+button-gap = 1.100000023841858
+button-icon-position = "end"
+dropdown-opacity = 86
+
+[[bar.layout]]
+monitor = "*"
+show = true
+left = [
+    "dashboard",
+    "hyprland-workspaces",
+    "window-title",
+]
+center = [
+    "clock",
+    "weather",
+]
+right = [
+    "volume",
+    "bluetooth",
+    "network",
+    "battery",
+]
+
+[styling]
+rounding = "full"
+theme-provider = "wayle"
+
+[modules.battery]
+label-show = false
+
+[modules.bluetooth]
+label-show = false
+
+[modules.clock]
+icon-show = false
+
+[modules.hyprland-workspaces]
+min-workspace-count = 5
+display-mode = "icon"
+app-icons-show = true
+
+[modules.weather]
+location = "Paris"
+
+[modules.window-title]
+icon-show = false
+
+[wallpaper]
+cycling-directory = "/home/ado/Images/fond d'écran pc/a_cartoon_of_a_house_on_a_cliff.png"

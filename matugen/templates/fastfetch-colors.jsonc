@@ -1,0 +1,62 @@
+{
+    // Généré par Matugen — ne pas éditer directement.
+    // Source : ~/.config/matugen/templates/fastfetch-colors.jsonc
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+
+    "logo": {
+        "type": "small",
+        "color": {
+            "1": "{{colors.inverse_primary.dark.hex}}"
+        },
+        "padding": {
+            "right": 4
+        }
+    },
+
+    "display": {
+        "separator": " ",
+        "key": {
+            "width": 9
+        }
+    },
+
+    "modules": [
+        {
+            "type": "user",
+            "key": " user",
+            "keyColor": "{{colors.tertiary.dark.hex}}"
+        },
+        {
+            "type": "os",
+            "key": " distro",
+            "keyColor": "{{colors.primary_fixed_dim.dark.hex}}"
+        },
+        {
+            "type": "kernel",
+            "key": " kernel",
+            "keyColor": "{{colors.primary.dark.hex}}"
+        },
+        {
+            "type": "terminal",
+            "key": " term",
+            "keyColor": "{{colors.error.dark.hex}}"
+        },
+        {
+            "type": "wm",
+            "key": " wm",
+            "keyColor": "{{colors.on_surface_variant.dark.hex}}"
+        },
+        {
+            "type": "disk",
+            "key": " disk",
+            "keyColor": "{{colors.primary_fixed_dim.dark.hex}}",
+            "folders": "/"
+        },
+        {
+            "type": "colors",
+            "key": " colors",
+            "keyColor": "{{colors.primary.dark.hex}}",
+            "symbol": "diamond"
+        }
+    ]
+}

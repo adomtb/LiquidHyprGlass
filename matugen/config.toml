@@ -1,0 +1,39 @@
+[config]
+reload_apps = true
+prefer = "saturation"
+
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/hyprland-colors.lua'
+output_path = '~/.config/hypr/colors.lua'
+post_hook = "hyprctl reload"
+
+[templates.kitty]
+input_path = '~/.config/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/kitty/matugen-colors.conf'
+post_hook = 'killall -USR1 kitty || :'
+
+[templates.rofi]
+input_path = '~/.config/matugen/templates/rofi-colors.rasi'
+output_path = '~/.config/rofi/colors.rasi'
+
+[templates.wayle]
+input_path = '~/.config/matugen/templates/wayle.toml'
+output_path = '~/.config/wayle/matugen/colors.toml'
+post_hook = "wayle panel restart"
+
+[templates.btop]
+input_path = '~/.config/matugen/templates/btop.theme'
+output_path = '~/.config/btop/themes/matugen.theme'
+
+[templates.fastfetch]
+input_path = '~/.config/matugen/templates/fastfetch-colors.jsonc'
+output_path = '~/.config/fastfetch/config.jsonc'
+
+[templates.vscode]
+input_path = '~/.config/matugen/templates/vscode/dankshell.json'
+output_path = '~/.vscode/extensions/matugen-theme/themes/matugen-color-theme.json'
+
+[templates.vscode_premium]
+input_path = '~/.config/matugen/templates/vscode/premium-colors.json'
+output_path = '~/.config/matugen/generated/vscode-premium-colors.json'
+post_hook = '~/.config/matugen/apply-vscode-settings.sh'

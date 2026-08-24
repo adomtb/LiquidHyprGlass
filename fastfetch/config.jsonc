@@ -1,0 +1,62 @@
+{
+    // Généré par Matugen — ne pas éditer directement.
+    // Source : ~/.config/matugen/templates/fastfetch-colors.jsonc
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+
+    "logo": {
+        "type": "small",
+        "color": {
+            "1": "#5b631e"
+        },
+        "padding": {
+            "right": 4
+        }
+    },
+
+    "display": {
+        "separator": " ",
+        "key": {
+            "width": 9
+        }
+    },
+
+    "modules": [
+        {
+            "type": "user",
+            "key": " user",
+            "keyColor": "#a2d0c1"
+        },
+        {
+            "type": "os",
+            "key": " distro",
+            "keyColor": "#c4cd7b"
+        },
+        {
+            "type": "kernel",
+            "key": " kernel",
+            "keyColor": "#c4cd7b"
+        },
+        {
+            "type": "terminal",
+            "key": " term",
+            "keyColor": "#ffb4ab"
+        },
+        {
+            "type": "wm",
+            "key": " wm",
+            "keyColor": "#c8c7b7"
+        },
+        {
+            "type": "disk",
+            "key": " disk",
+            "keyColor": "#c4cd7b",
+            "folders": "/"
+        },
+        {
+            "type": "colors",
+            "key": " colors",
+            "keyColor": "#c4cd7b",
+            "symbol": "diamond"
+        }
+    ]
+}

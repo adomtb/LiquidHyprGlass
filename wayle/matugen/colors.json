@@ -1,0 +1,12 @@
+{
+  "bg": "#1a1112",
+  "surface": "#1a1112",
+  "elevated": "#312828",
+  "fg": "#f0dedf",
+  "fg-muted": "#d7c1c3",
+  "primary": "#ffb2ba",
+  "red": "#E78284",
+  "yellow": "#E5C890",
+  "green": "#A6D189",
+  "blue": "#8CAAEE"
+}

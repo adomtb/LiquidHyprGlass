@@ -1,0 +1,7 @@
+*.bak
+*.backup.*
+*.save
+*.swp
+.DS_Store
+zcompdump*
+zhistory
