@@ -7,6 +7,10 @@ input_path = '~/.config/matugen/templates/hyprland-colors.lua'
 output_path = '~/.config/hypr/colors.lua'
 post_hook = "hyprctl reload"
 
+[templates.hyprlock]
+input_path = '~/.config/matugen/templates/hyprlock-colors.conf'
+output_path = '~/.config/hypr/hyprlock-colors.conf'
+
 [templates.kitty]
 input_path = '~/.config/matugen/templates/kitty-colors.conf'
 output_path = '~/.config/kitty/matugen-colors.conf'
@@ -29,11 +33,22 @@ output_path = '~/.config/btop/themes/matugen.theme'
 input_path = '~/.config/matugen/templates/fastfetch-colors.jsonc'
 output_path = '~/.config/fastfetch/config.jsonc'
 
-[templates.vscode]
-input_path = '~/.config/matugen/templates/vscode/dankshell.json'
-output_path = '~/.vscode/extensions/matugen-theme/themes/matugen-color-theme.json'
+# --- VS Code : extension "Matugen Theme" (haikalllp.matugen-theme) ---------
+# L'extension surveille ces 2 fichiers et régénère le thème toute seule.
+[templates.vscode-raw]
+input_path = '~/.config/matugen/templates/vscode-colors'
+output_path = '~/.cache/matugen/vscode-colors'
 
-[templates.vscode_premium]
-input_path = '~/.config/matugen/templates/vscode/premium-colors.json'
-output_path = '~/.config/matugen/generated/vscode-premium-colors.json'
-post_hook = '~/.config/matugen/apply-vscode-settings.sh'
+[templates.vscode-json]
+input_path = '~/.config/matugen/templates/vscode-colors.json'
+output_path = '~/.cache/matugen/vscode-colors.json'
+
+# --- Ancien montage maison (désactivé, gardé pour rollback) ----------------
+# [templates.vscode]
+# input_path = '~/.config/matugen/templates/vscode/dankshell.json'
+# output_path = '~/.vscode/extensions/matugen-theme/themes/matugen-color-theme.json'
+#
+# [templates.vscode_premium]
+# input_path = '~/.config/matugen/templates/vscode/premium-colors.json'
+# output_path = '~/.config/matugen/generated/vscode-premium-colors.json'
+# post_hook = '~/.config/matugen/apply-vscode-settings.sh'

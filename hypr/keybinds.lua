@@ -33,7 +33,7 @@ hl.bind(mod .. " + SHIFT + R", hl.dsp.exec_cmd("killall -SIGINT wf-recorder"))
 
 
 -- Verrouiller manuellement
-hl.bind("SUPER + L", hl.dsp.exec_cmd("loginctl lock-session"))
+hl.bind("SUPER + L", hl.dsp.exec_cmd("pidof hyprlock || hyprlock"))
 
 -- Quitter
 hl.bind(mod .. " + M",      hl.dsp.exit())

@@ -5,3 +5,6 @@
 .DS_Store
 zcompdump*
 zhistory
+
+# Sorties générées par matugen (recréées à chaque changement de wallpaper)
+matugen/generated/

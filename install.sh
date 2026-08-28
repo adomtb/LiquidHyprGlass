@@ -85,6 +85,8 @@ PACKAGES=(
     # Compositeur
     hyprland
     hyprpaper
+    hyprlock
+    hypridle
 
     # Barre / dock / réglages / lanceur (yay résout aussi les dépendances
     # python-hyprland-* de hyprmod automatiquement)
@@ -139,6 +141,7 @@ PACKAGES=(
     firefox
     geany
     ncmpcpp
+    visual-studio-code-bin   # thème matugen via l'extension haikalllp.matugen-theme
 
     # Sélecteur de fond d'écran rofi (miniatures via `magick`)
     imagemagick
@@ -175,6 +178,19 @@ if ! hyprpm list 2>/dev/null | grep -q hyprglass; then
     hyprpm add https://github.com/hyprnux/hyprglass
 fi
 hyprpm enable hyprglass
+
+# ---------------------------------------------------------------------------
+# 4b. Extension VS Code pour le thème matugen dynamique
+# ---------------------------------------------------------------------------
+log "Extension VS Code (thème matugen dynamique)"
+
+if command -v code >/dev/null 2>&1; then
+    # L'extension surveille ~/.cache/matugen/vscode-colors{,.json}
+    # (générés par matugen, cf. matugen/config.toml -> [templates.vscode-*]).
+    code --install-extension haikalllp.matugen-theme --force
+else
+    echo "commande 'code' introuvable, on passe l'extension matugen-theme."
+fi
 
 # ---------------------------------------------------------------------------
 # 5. Déploiement de la config (symlinks vers ce repo)
@@ -222,6 +238,10 @@ cat <<'EOF'
 Prochaines étapes manuelles :
   - Se déconnecter / redémarrer, puis choisir la session "Hyprland" au login.
   - Adapter la ville météo dans wayle/config.toml (placeholder: "Paris").
-  - Lancer `waypaper` pour choisir un fond d'écran (matugen régénère les couleurs).
+  - Lancer `waypaper` pour choisir un fond d'écran (matugen régénère les couleurs,
+    y compris hyprlock-colors.conf et le thème VS Code).
+  - Dans VS Code, sélectionner le thème « Matugen Theme » (Ctrl+K Ctrl+T).
+  - hypridle démarre avec Hyprland (cf. autostart.lua) : verrouillage hyprlock
+    après 15 min, `SUPER + L` pour verrouiller à la main.
 
 EOF

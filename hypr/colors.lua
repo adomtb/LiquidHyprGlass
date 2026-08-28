@@ -1,6 +1,6 @@
 return {
-    active_border   = "rgba(9bcbfbff)",
-    inactive_border = "rgba(8c9198ff)",
+    active_border   = "rgba(86d6bfff)",
+    inactive_border = "rgba(89938fff)",
     shadow_color    = "rgba(000000ee)",
-    background      = "rgba(101418ff)",
+    background      = "rgba(0e1513ff)",
 }
