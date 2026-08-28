@@ -11,7 +11,7 @@ hl.bind(mod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mod .. " + B",      hl.dsp.exec_cmd(browser))
 hl.bind(mod .. " + E",      hl.dsp.exec_cmd(filemanager))
 hl.bind(mod .. " + d",      hl.dsp.exec_cmd(launcher))
-hl.bind(mod .. " + W", hl.dsp.exec_cmd("waypaper"))
+hl.bind(mod .. " + w", hl.dsp.exec_cmd("/home/ado/.config/hypr/scripts/wallpaper-picker.sh"))
 
 
 -- Screenshots

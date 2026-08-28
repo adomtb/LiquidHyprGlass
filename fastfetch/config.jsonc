@@ -6,7 +6,7 @@
     "logo": {
         "type": "small",
         "color": {
-            "1": "#5b631e"
+            "1": "#2f628c"
         },
         "padding": {
             "right": 4
@@ -24,17 +24,17 @@
         {
             "type": "user",
             "key": " user",
-            "keyColor": "#a2d0c1"
+            "keyColor": "#d3bfe6"
         },
         {
             "type": "os",
             "key": " distro",
-            "keyColor": "#c4cd7b"
+            "keyColor": "#9bcbfb"
         },
         {
             "type": "kernel",
             "key": " kernel",
-            "keyColor": "#c4cd7b"
+            "keyColor": "#9bcbfb"
         },
         {
             "type": "terminal",
@@ -44,18 +44,18 @@
         {
             "type": "wm",
             "key": " wm",
-            "keyColor": "#c8c7b7"
+            "keyColor": "#c2c7cf"
         },
         {
             "type": "disk",
             "key": " disk",
-            "keyColor": "#c4cd7b",
+            "keyColor": "#9bcbfb",
             "folders": "/"
         },
         {
             "type": "colors",
             "key": " colors",
-            "keyColor": "#c4cd7b",
+            "keyColor": "#9bcbfb",
             "symbol": "diamond"
         }
     ]

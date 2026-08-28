@@ -8,9 +8,9 @@ Ma configuration [Hyprland](https://hyprland.org/) sur Arch Linux — pilotée e
 
 ## 📸 Aperçu
 
-| Terminal (kitty + fastfetch) | Sélecteur de fond d'écran (waypaper) | Lanceur d'applications (rofi) |
+| Terminal (kitty + fastfetch) | Sélecteur de fond d'écran (rofi) | Lanceur d'applications (rofi) |
 |:---:|:---:|:---:|
-| ![fastfetch](assets/fastfetch.png) | ![waypaper](assets/waypaper.png) | ![launcher](assets/launcher.png) |
+| ![fastfetch](assets/fastfetch.png) | ![wallpaper picker](assets/wallpaper-picker.png) | ![launcher](assets/launcher.png) |
 
 ---
 
@@ -26,7 +26,7 @@ Ma configuration [Hyprland](https://hyprland.org/) sur Arch Linux — pilotée e
 | Terminal | **kitty** | Terminal GPU, thème assorti au reste du bureau |
 | Fetch | **fastfetch** | Résumé système au lancement du terminal |
 | Lanceur / switcher | **rofi** (`drun` + `window`) | Lancer une app (`SUPER + D`) ou basculer entre fenêtres (`SUPER + Tab`) |
-| Fond d'écran | **hyprpaper** + **waypaper** | `hyprpaper` affiche le wallpaper, `waypaper` sert de sélecteur graphique |
+| Fond d'écran | **hyprpaper** + **rofi** + **waypaper** | `hyprpaper` affiche le wallpaper ; `SUPER + W` ouvre un sélecteur rofi maison (`hypr/scripts/wallpaper-picker.sh`) avec miniatures (imagemagick), qui applique le choix via `waypaper` |
 | Couleurs dynamiques | **matugen** | Génère une palette Material You depuis le wallpaper, appliquée aux bordures/ombres/fond |
 | Effet verre / blur | **hyprglass** (plugin) | Effet "glass" sur la barre, le dock, rofi et les popups, avec plusieurs presets (`glass`, `clear`, `contrasted`) |
 | Captures d'écran | **hyprshot** + **satty** | Capture (écran/zone/fenêtre) et annotation à la volée |
@@ -45,13 +45,15 @@ Ma configuration [Hyprland](https://hyprland.org/) sur Arch Linux — pilotée e
 ├── appearance.lua       # Gaps, arrondis, opacité, animations, courbes bézier
 ├── input.lua            # Clavier AZERTY, touchpad, gestes 3 doigts
 ├── keybinds.lua         # Tous les raccourcis clavier/souris
-├── autostart.lua        # Démarrage : wayle, hyprpaper, hypr-dock, waypaper...
+├── autostart.lua        # Démarrage : wayle, hyprpaper, hypr-dock, restauration waypaper...
 ├── rules.lua             # Règles de fenêtres et de layers (float, blur, opacité...)
 ├── events.lua            # Hooks (notifs au démarrage, opacité par app...)
 ├── glass.lua             # Config du plugin hyprglass (presets, layers)
 ├── colors.lua             # Couleurs de base (bordures, ombre, fond)
 ├── hyprland-gui.lua      # Généré par HyprMod (réglages via l'app graphique)
-└── matugen-colors.lua    # Couleurs dynamiques matugen, appliquées en dernier
+├── matugen-colors.lua    # Couleurs dynamiques matugen, appliquées en dernier
+└── scripts/
+    └── wallpaper-picker.sh  # Sélecteur de fond d'écran rofi (miniatures + waypaper)
 ```
 
 L'ordre de chargement compte : `matugen-colors.lua` est chargé **après** `hyprland-gui.lua` pour que les couleurs générées depuis le wallpaper aient toujours le dernier mot sur les couleurs de bordure.
@@ -71,7 +73,7 @@ cd ~/liquid_hyprglass
 `install.sh` fait tout, de façon idempotente (on peut le relancer sans risque) :
 
 1. Active les dépôts pacman nécessaires (`chaotic-aur`, et le dépôt perso `gh0stzk-dotfiles` pour `colorscript`/l'ascii-art du zsh)
-2. Installe `yay`, puis tous les paquets de la stack (Hyprland, wayle, hypr-dock, HyprMod, kitty, zsh + plugins, rofi, waybar, matugen, waypaper, hyprpaper, fastfetch, hyprshot, satty, wf-recorder, playerctl, brightnessctl, pipewire/wireplumber, Firefox, Nautilus, geany, ncmpcpp, polices...)
+2. Installe `yay`, puis tous les paquets de la stack (Hyprland, wayle, hypr-dock, HyprMod, kitty, zsh + plugins, rofi, waybar, matugen, waypaper, hyprpaper, imagemagick, fastfetch, hyprshot, satty, wf-recorder, playerctl, brightnessctl, pipewire/wireplumber, Firefox, Nautilus, geany, ncmpcpp, polices...)
 3. Installe le plugin **hyprglass** via `hyprpm` (repo [hyprnux/hyprglass](https://github.com/hyprnux/hyprglass))
 4. Symlink chaque dossier de ce repo vers `~/.config/<outil>/` (et `zsh/.zshrc` → `~/.zshrc`) — toute config déjà présente est sauvegardée en `.bak.<date>` plutôt qu'écrasée
 5. Passe le shell par défaut à `zsh` et active `NetworkManager` / `bluetooth`
@@ -111,7 +113,7 @@ zsh/.zshrc     → ~/.zshrc
 | `SUPER + B` | Ouvrir le navigateur (Firefox) |
 | `SUPER + E` | Ouvrir le gestionnaire de fichiers (Nautilus) |
 | `SUPER + D` | Lanceur d'applications (rofi) |
-| `SUPER + W` | Sélecteur de fond d'écran (waypaper) |
+| `SUPER + W` | Sélecteur de fond d'écran (rofi, avec miniatures) |
 | `SUPER + Tab` | Basculer entre les fenêtres ouvertes (rofi) |
 
 ### Captures d'écran

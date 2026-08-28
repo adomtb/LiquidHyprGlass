@@ -106,7 +106,8 @@ PACKAGES=(
     bat
     fastfetch
 
-    # Wallpaper / couleurs dynamiques
+    # Wallpaper / couleurs dynamiques (waypaper reste le backend appliqué
+    # par scripts/wallpaper-picker.sh, même si le sélecteur visuel est rofi)
     waypaper-git
     matugen
 
@@ -138,6 +139,9 @@ PACKAGES=(
     firefox
     geany
     ncmpcpp
+
+    # Sélecteur de fond d'écran rofi (miniatures via `magick`)
+    imagemagick
 
     # Polices
     noto-fonts

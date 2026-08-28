@@ -1,0 +1,65 @@
+/* Sélecteur de fond d'écran : reprend le thème du launcher (config.rasi :
+   couleurs matugen, police, bordure) et ajoute une grille compacte avec
+   prévisualisation.
+
+   NB : en mode dmenu, rofi rend mainbox/listview/inputbar opaques par
+   défaut -> on force leur fond transparent pour retrouver la
+   translucidité de la fenêtre. */
+
+@import "config.rasi"
+
+* {
+    background-color: transparent;
+}
+
+window {
+    width: 560px;
+    background-color: @wbg-color;
+}
+
+mainbox,
+inputbar,
+listview,
+scrollbar {
+    background-color: transparent;
+}
+
+listview {
+    columns: 3;
+    lines: 2;
+    fixed-height: false;
+    fixed-columns: true;
+    spacing: 8px;
+}
+
+element {
+    orientation: vertical;
+    padding: 6px;
+    spacing: 6px;
+    background-color: transparent;
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color: transparent;
+}
+
+element selected.normal,
+element selected.active {
+    background-color: @hl-color;
+    text-color: @hlt-color;
+}
+
+element-icon {
+    size: 140px;
+    border-radius: 6px;
+}
+
+element-text {
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+}
+
+entry {
+    placeholder: "";
+}
